@@ -441,7 +441,7 @@ a.findarepbtn:active{background: url('../img/findsalesrep_sprite.png') 0 42px; }
 #hp_content li{
 }
 .hp_content_full {
-	float: left;
+	/* float: left; */
 	padding-top: 0px;
 	padding-right: 20px;
 	padding-bottom: 20px;
