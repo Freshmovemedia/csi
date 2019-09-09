@@ -33,6 +33,7 @@ if( empty($errors))
 	//redirect to the 'thank you' page
 	header('Location: contact-form-thank-you.php');
 } 
+if(!empty($_POST['website'])) die();
 ?>
 <!DOCTYPE html> 
 <html>

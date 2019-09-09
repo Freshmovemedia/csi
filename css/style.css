@@ -533,8 +533,13 @@ a.findarepbtn:active{background: url('../img/findsalesrep_sprite.png') 0 42px; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
-
-
+/* ==========================================
+ADDED FOR NEW CONTACT FORM, HONEY POT
+FRESHMOVEMEDIA LLC 
+============================================*/
+form #website {
+	display: none;
+}
 
 /* =============================================================================
    PLACEHOLDER Media Queries for Responsive Design.
@@ -572,3 +577,5 @@ a.findarepbtn:active{background: url('../img/findsalesrep_sprite.png') 0 42px; }
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3{ page-break-after: avoid; }
 }
+
+

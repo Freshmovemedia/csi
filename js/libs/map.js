@@ -4,16 +4,17 @@ $(document).ready(function () {
         height: 593,
         colors: {
             baseDefault: "#000000",
-            background: "#f9f9f9",
+            background: "#fff",
             selected: 40,
             directory: "#fafafa",
             status: {},
             base: "#fff",
-            stroke: "e3e3e3",
+            stroke: "d3d3d3",
             hover: "d9d9d9"
         },
         regions: {
             AK: {
+                fill: "rgba(0,179,29,1)",
                 id: "AK",
                 'id_no_spaces': "AK",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
