@@ -44,7 +44,7 @@
                 <li><a href="http://eco-cold.net"><strong>Eco-Cold</strong></a> - Low temperature doors</li>
                 <li><a href="http://www.chasedoors.com"><strong>Chase Traffic Doors</strong></a></li>
                 <li><a href="http://www.generalplastics.com/solutions/product-lines/rigid-foams/r-9300"><strong>General Plastics</strong></a> - High density thermal isolation blocks</li>
-                <li><a href="http://www.albanydoors.us/"><strong>Albany</strong></a> - High speed fabric doors</li>
+                <li>High speed fabric doors</li>
                 <li><a href="http://foamular.com/foam/products/foamular-lt-30.aspx"><strong>Owens Corning</strong></a> - Foamular extruded polystyrene</li>
                 <li><strong>Krack</strong> Refrigeration Systems (select areas)</li>
                 <li>Roofing insulation and systems</li>

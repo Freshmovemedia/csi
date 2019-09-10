@@ -129,7 +129,7 @@
 				<area shape="poly" href="#AK" coords="16,11 110,11 110,33 16,33 16,11" />
 				<area shape="poly" href="#PR" coords="548,346 617,346 617,413 548,413 548,346" />
 			</map>
-			<img src="img/map.gif" usemap="#usa" /><br />
+			<img src="/img/map.gif" usemap="#usa" /><br />
 
 			<div id="salesreplist">
 				<a name="VA"></a>

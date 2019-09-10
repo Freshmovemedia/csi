@@ -27,7 +27,7 @@
 
 			<h2>Contact CSI</h2>
 
-			<p>If you would like to discuss your specific job requirements, please speak to a <a href="sales.php"
+			<p>If you would like to discuss your specific job requirements, please speak to a <a href="http://www.csiinc.org/sales/"
 					title="Sales Representative Locator">sales representative</a>, otherwise, please feel free to
 				contact our main office. We can be reached by: </p>
 			<ul class="contact-page">

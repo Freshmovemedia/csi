@@ -23,7 +23,7 @@
 
     <div id="hp_content">
 
-        <div class="hp_content_full">
+        <div class="hp_content_full float_none">
 
             <h1>CSI Sales Rep Locator</h1>
             <h3>Click on your state to learn more...</h3>
