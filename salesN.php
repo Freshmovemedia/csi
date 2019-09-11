@@ -27,8 +27,8 @@
 
             <h1>CSI Sales Rep Locator</h1>
             <h3>Click on your state to learn more...</h3>
-            <div id="mapsvg"></div>       
-        <button id="resetBtn"></button>
+            <div id="mapsvg"></div>    
+            <div id="contactInfo"></div>   
         </div>
 
             <?php require_once('inc/footer.php'); ?>

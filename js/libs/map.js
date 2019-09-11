@@ -1,8 +1,5 @@
 $(document).ready(function () {
 
-    // Hides restbutton on page load
-    $('#resetBtn').hide();
-
     var sectors = {
         csiVa: {
             name: 'CSI of Virginia, Inc. - Corporate Office',
@@ -29,7 +26,7 @@ $(document).ready(function () {
             contacts: [{
                 name: 'Adam Comiskey - President',
                 email: 'ancomiskey@me.com',
-                phone: ' 518.477.2390 ext 3 Cell:518.265.8702',
+                phone: ' 518.477.2390 ext 3 Cell: 518.265.8702',
             }, {
                 name: 'David Comiskey',
                 email: 'comiskey@me.com',
@@ -37,7 +34,7 @@ $(document).ready(function () {
             }, {
                 name: 'Mark Hankle',
                 email: 'mhankle@me.com',
-                phone: '518.477.2390 ext 2 Cell:518.538.3646',
+                phone: '518.477.2390 ext 2 Cell: 518.538.3646',
             }]
         },
         regionTwo: {
@@ -546,7 +543,7 @@ $(document).ready(function () {
                 if (typeof _thisfuckingDooDad.contacts[1] === "undefined") {
                     var firstContactName = $('<h4>').text('Primary Contact: ' + _thisfuckingDooDad.contacts[0].name);
                     contactInfo.append(firstContactName);
-                    var firstContactPhone = $('<h4>').html('Primary Phone: ' + _thisfuckingDooDad.contacts[0].phone);
+                    var firstContactPhone = $('<h4>').text('Primary Phone: ' + _thisfuckingDooDad.contacts[0].phone);
                     contactInfo.append(firstContactPhone);
                     var firstContactEmail = $('<h4>').text('Primary Email: ' + _thisfuckingDooDad.contacts[0].email);
                     contactInfo.append(firstContactEmail);
