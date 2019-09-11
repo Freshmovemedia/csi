@@ -5,104 +5,99 @@ $(document).ready(function () {
 
     var sectors = {
         csiVa: {
-            Name: 'CSI of Virginia, Inc. - Corporate Office',
+            name: 'CSI of Virginia, Inc. - Corporate Office',
             product: 'General Plastics',
-            phone: '804.744.0700 ext 3',
+            office: '804.744.0700 ext 3',
             address: 'P.O.Box 74728 North Chesterfield, VA 23236',
             fax: '804.744.3911',
-            firstContact: {
-                title: 'President',
-                name: 'Kevin Clasbey',
+            contacts: [{
+                name: 'Kevin Clasbey - President',
                 email: 'Kevin@csiinc.org',
-                phone: '804.744.0700 ext 3'
-            },
-            secondContact: {
-                title: 'Accounting & Inside Sales',
-                name: 'John Keefe',
+                phone: '804.744.0700 ext 3',
+            }, {
+                name: 'John Keefe - Accounting & Inside Sales',
                 email: 'John@csiinc.org',
-                phone: '252.916.5240'
-            }
+                phone: '252.916.5240',
+            }]
         },
         regionOne: {
-            Name: 'Region 1: Comiskey & Associates LLC',
+            name: 'Region 1: Comiskey & Associates LLC',
             product: 'Green Span Profiles, Eco-Cold Doors, Chase Doors, Foamular Insulation, Aluminum Tee Ceilings',
-            phone: '518.477.2390',
+            office: '518.477.2390',
             address: '12 Corporate Woods Blvd. Albany, NY 12221',
             fax: '518.477.3864',
-            firstContact: {
-                title: 'President',
-                name: 'Adam Comiskey',
+            contacts: [{
+                name: 'Adam Comiskey - President',
                 email: 'ancomiskey@me.com',
-                phone: ' 518.477.2390 ext 3',
-                cell: '518.265.8702'
-            },
-            secondContact: {
+                phone: ' 518.477.2390 ext 3 Cell:518.265.8702',
+            }, {
                 name: 'David Comiskey',
                 email: 'comiskey@me.com',
-                phone: '518.477.2390 ext 1',
-                cell: '518.441.2461'
-            },
-            thirdContact: {
+                phone: '518.477.2390 ext 1 Cell: 518.441.2461',
+            }, {
                 name: 'Mark Hankle',
                 email: 'mhankle@me.com',
-                phone: '518.477.2390 ext 2',
-                cell: '518.538.3646',
-            }
+                phone: '518.477.2390 ext 2 Cell:518.538.3646',
+            }]
         },
         regionTwo: {
-            Name: 'Region 2: CSI of Virginia Inc.',
+            name: 'Region 2: CSI of Virginia Inc.',
             product: 'Green Span Profiles, Eco-Cold Doors, Chase Doors, Foamular Insulation, Aluminum Tee Ceilings',
             address: '1030 Foxrun Terrace Hanover, PA 17331',
             fax: '804.744.3911',
-            firstContact: {
+            office: '717.880.7126',
+            contacts: [{
                 name: 'Bret Motter',
                 email: 'bret@csiinc.org',
-                cell: '717.880.7126'
-            }
+                phone: '717.880.7126'
+            }]
         },
         regionThree: {
-            Name: 'Region 3: CSI of Virginia Inc.',
+            name: 'Region 3: CSI of Virginia Inc.',
             product: 'Green Span Profiles, Eco-Cold Doors, Chase Doors, Foamular Insulation, Aluminum Tee Ceilings',
             address: '750 Majestic Oak Drive Charleston, SC 29412',
             fax: '804.744.3911',
-            firstContact: {
+            office: '804.683.3262',
+            contacts: [{
                 name: 'Josh Shifflett',
                 email: 'josh@csiinc.org ',
-                cell: '804.683.3262'
-            }
-        },
-        regionFour: {
-            Name: 'Region 4: CSI of Virginia, Inc.',
-            product: 'Eco-Cold Doors, Chase Doors, Foamular Insulation',
-            address: '2155 Old Moultrie Road Suite 101 St.Augustine, FL 32086 ',
-            phone: '904.797.6300',
-            cell: '904.824.6825',
-            firstContact: {
-                name: 'Allen Rockafellow',
-                email: 'arockafellow@att.net',
-                cell: '904.806.2839'
-            }
-        },
-        regionFive: {
-            Name: 'Region 5: CSI of Virginia, Inc.',
-            product: 'Green Span Profiles, Eco-Cold Doors, Chase Doors, Foamular Insulation, Aluminum Tee Ceilings',
-            address: '707 Hidden Circle Centerville, OH 45458',
-            fax: '804.744.3911',
-            firstContact: {
-                name: 'Mike Bradshaw',
-                email: 'mbradshaw@csioh.com',
-                cell: '937.409.8428'
+                phone: '804.683.3262',
+            }],
+            regionFour: {
+                name: 'Region 4: CSI of Virginia, Inc.',
+                product: 'Eco-Cold Doors, Chase Doors, Foamular Insulation',
+                address: '2155 Old Moultrie Road Suite 101 St.Augustine, FL 32086 ',
+                office: '904.797.6300 Cell:904.824.6825',
+                contacts: [{
+                    name: 'Allen Rockafellow',
+                    email: 'arockafellow@att.net',
+                    phone: '904.806.2839'
+                }]
             },
-            secondAddress: '970 Reece Ridge Drive Gahanna, OH 43230',
-            secondPhone: '614.975.0407',
-            secondFax: '804.744.3911',
-            secondContact: {
-                name: 'Edward D. Brackman',
-                email: 'edbrackman@csioh.com',
-                cell: '617.975.0407'
+            regionFive: {
+                name: 'Region 5: CSI of Virginia, Inc.',
+                product: 'Green Span Profiles, Eco-Cold Doors, Chase Doors, Foamular Insulation, Aluminum Tee Ceilings',
+                address: '707 Hidden Circle Centerville, OH 45458',
+                fax: '804.744.3911',
+                office: '937.409.8428',
+                contacts: [{
+                    name: 'Mike Bradshaw',
+                    email: 'mbradshaw@csioh.com',
+                    phone: '937.409.8428'
+                }, {
+                    name: 'Edward D. Brackman',
+                    email: 'edbrackman@csioh.com',
+                    phone: '617.975.0407'
+                }],
+                seconday: {
+                    secondAddress: '970 Reece Ridge Drive Gahanna, OH 43230',
+                    secondPhone: '614.975.0407',
+                    secondFax: '804.744.3911',
+                }
             }
         }
-    }
+    };
+
     // console.log(sectors.csiVa)
     // Start map configs
     $("#mapsvg").mapSvg({
@@ -531,14 +526,82 @@ $(document).ready(function () {
         },
         viewBox: [0, 0, 959, 593],
         onClick: function () {
-            var _thisFuckingDoodad = JSON.stringify(this.data.myParameter)
-            if (this.data.myParameter)  
-            $('#contactInfo').html(
-                $('<div>')
-                .addClass("contact-info")
-                .text(_thisFuckingDoodad)
-            );
-                console.log(this.data.myParameter)
+
+            if (this.data.myParameter) {
+                var _thisfuckingDooDad = this.data.myParameter
+                console.log(_thisfuckingDooDad.contacts.length)
+                console.log(_thisfuckingDooDad.contacts)
+                var contactInfo = $('<div class="contact-info">');
+                var regionName = $('<h3>').text('Region Name: ' + _thisfuckingDooDad.name);
+                contactInfo.append(regionName);
+                var regionPoduct = $('<h4>').text('Products: ' + _thisfuckingDooDad.product);
+                contactInfo.append(regionPoduct);
+                var regionAddress = $('<h4>').text('Primary Address: ' + _thisfuckingDooDad.address);
+                contactInfo.append(regionAddress);
+                var regionOffice = $('<h4>').text('Office Number: ' + _thisfuckingDooDad.office);
+                contactInfo.append(regionOffice);
+                var linebreak = $('<hr>');
+                contactInfo.append(linebreak);
+
+                if (typeof _thisfuckingDooDad.contacts[1] === "undefined") {
+                    var firstContactName = $('<h4>').text('Primary Contact: ' + _thisfuckingDooDad.contacts[0].name);
+                    contactInfo.append(firstContactName);
+                    var firstContactPhone = $('<h4>').html('Primary Phone: ' + _thisfuckingDooDad.contacts[0].phone);
+                    contactInfo.append(firstContactPhone);
+                    var firstContactEmail = $('<h4>').text('Primary Email: ' + _thisfuckingDooDad.contacts[0].email);
+                    contactInfo.append(firstContactEmail);
+                }  else if (typeof _thisfuckingDooDad.contacts[2] === "undefined") {
+                    var firstContactName = $('<h4>').text('Primary Contact: ' + _thisfuckingDooDad.contacts[0].name);
+                    contactInfo.append(firstContactName);
+                    var firstContactPhone = $('<h4>').text('Primary Phone: ' + _thisfuckingDooDad.contacts[0].phone);
+                    contactInfo.append(firstContactPhone);
+                    var firstContactEmail = $('<h4>').text('Primary Email: ' + _thisfuckingDooDad.contacts[0].email);
+                    contactInfo.append(firstContactEmail);
+                    var linebreakTwo = $('<hr>');
+                     //Second Contact
+                    contactInfo.append(linebreakTwo);
+                    var secondContactName = $('<h4>').text('Secondary Contact: ' + _thisfuckingDooDad.contacts[1].name);
+                    contactInfo.append(secondContactName);
+                    var secondContactPhone = $('<h4>').text('Secondary Phone: ' + _thisfuckingDooDad.contacts[1].phone);
+                    contactInfo.append(secondContactPhone);
+                    var secondContactEmail = $('<h4>').text('Secondary Email: ' + _thisfuckingDooDad.contacts[1].email);
+                    contactInfo.append(secondContactEmail);
+                } else {
+                    var firstContactName = $('<h4>').text('Primary Contact: ' + _thisfuckingDooDad.contacts[0].name);
+                    contactInfo.append(firstContactName);
+                    var firstContactPhone = $('<h4>').text('Primary Phone: ' + _thisfuckingDooDad.contacts[0].phone);
+                    contactInfo.append(firstContactPhone);
+                    var firstContactEmail = $('<h4>').text('Primary Email: ' + _thisfuckingDooDad.contacts[0].email);
+                    contactInfo.append(firstContactEmail);
+                    var linebreakThree = $('<hr>');
+                    contactInfo.append(linebreakThree);
+                    //Second Contact
+                    var secondContactName = $('<h4>').text('Secondary Contact: ' + _thisfuckingDooDad.contacts[1].name);
+                    contactInfo.append(secondContactName);
+                    var secondContactPhone = $('<h4>').text('Secondary Phone: ' + _thisfuckingDooDad.contacts[1].phone);
+                    contactInfo.append(secondContactPhone);
+                    var secondContactEmail = $('<h4>').text('Secondary Email: ' + _thisfuckingDooDad.contacts[1].email);
+                    contactInfo.append(secondContactEmail);
+                    var linebreakFour = $('<hr>');
+                    contactInfo.append(linebreakFour);
+                    //Third Contact
+                    var thirdContactName = $('<h4>').text('Third Contact: ' + _thisfuckingDooDad.contacts[2].name);
+                    contactInfo.append(thirdContactName);
+                    var thirdContactPhone = $('<h4>').text('Third Phone: ' + _thisfuckingDooDad.contacts[2].phone);
+                    contactInfo.append(thirdContactPhone);
+                    var thirdContactEmail = $('<h4>').text('Third Email: ' + _thisfuckingDooDad.contacts[2].email);
+                    contactInfo.append(thirdContactEmail);
+                }
+            }
+
+
+
+            // console.log('Third Name: ' + _thisfuckingDooDad.thirdContact.name);
+            // console.log('Third Phone: ' + _thisfuckingDooDad.thirdContact.phone);
+            // console.log('Third Email: ' + _thisfuckingDooDad.thirdContact.email);
+
+            //Display contact Info
+            $('#contactInfo').html(contactInfo);
         },
         gauge: {
             on: false,
