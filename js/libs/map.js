@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // Hides map on page laod
     $('#mapsvg').hide()
-    var products = ['General Plastics', 'Green Span Profiles', 'Eco-Cold Doors', 'Chase Doors', 'Foamular Insulation', 'Aluminum Tee Ceilings']
+    var products = ['General Plastics', 'Green Span Profiles', 'Eco Cold Doors', 'Chase Doors', 'Foamular Insulation', 'Aluminum Tee Ceilings']
     var regionProductName;
 
     function filter() {
@@ -58,7 +58,7 @@ $(document).ready(function () {
         },
         regionOne: {
             name: 'Region 1: Comiskey & Associates LLC',
-            product: ['Green Span Profiles', 'Eco-Cold Doors', 'Chase Doors', 'Foamular Insulation', 'Aluminum Tee Ceilings'],
+            product: ['Green Span Profiles', 'Eco Cold Doors', 'Chase Doors', 'Foamular Insulation', 'Aluminum Tee Ceilings'],
             office: '518.477.2390',
             address: '12 Corporate Woods Blvd. Albany, NY 12221',
             fax: '518.477.3864',
@@ -78,7 +78,7 @@ $(document).ready(function () {
         },
         regionTwo: {
             name: 'Region 2: CSI of Virginia Inc.',
-            product: ['Green Span Profiles', 'Eco-Cold Doors', 'Chase Doors', 'Foamular Insulation', 'Aluminum Tee Ceilings'],
+            product: ['Green Span Profiles', 'Eco Cold Doors', 'Chase Doors', 'Foamular Insulation', 'Aluminum Tee Ceilings'],
             address: '1030 Foxrun Terrace Hanover, PA 17331',
             fax: '804.744.3911',
             office: '717.880.7126',
@@ -90,7 +90,7 @@ $(document).ready(function () {
         },
         regionThree: {
             name: 'Region 3: CSI of Virginia Inc.',
-            product: ['Green Span Profiles', 'Eco-Cold Doors', 'Chase Doors', 'Foamular Insulation', 'Aluminum Tee Ceilings'],
+            product: ['Green Span Profiles', 'Eco Cold Doors', 'Chase Doors', 'Foamular Insulation', 'Aluminum Tee Ceilings'],
             address: '750 Majestic Oak Drive Charleston, SC 29412',
             fax: '804.744.3911',
             office: '804.683.3262',
@@ -102,7 +102,7 @@ $(document).ready(function () {
         },
         regionFour: {
             name: 'Region 4: CSI of Virginia, Inc.',
-            product: ['Eco-Cold Doors, Chase Doors', 'Foamular Insulation'],
+            product: ['Eco Cold Doors', ' Chase Doors', 'Foamular Insulation'],
             address: '2155 Old Moultrie Road Suite 101 St.Augustine, FL 32086 ',
             office: '904.797.6300 Cell:904.824.6825',
             contacts: [{
@@ -114,7 +114,7 @@ $(document).ready(function () {
 
         regionFive: {
             name: 'Region 5: CSI of Virginia, Inc.',
-            product: ['Green Span Profiles', 'Eco-Cold Doors', 'Chase Doors', 'Foamular Insulation', 'Aluminum Tee Ceilings'],
+            product: ['Green Span Profiles', 'Eco Cold Doors', 'Chase Doors', 'Foamular Insulation', 'Aluminum Tee Ceilings'],
             address: '707 Hidden Circle Centerville, OH 45458',
             fax: '804.744.3911',
             office: '937.409.8428',
