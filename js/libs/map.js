@@ -1,6 +1,8 @@
 $(document).ready(function () {
     // Hides map on page laod
     $('#mapsvg').hide()
+    $('#table').hide()
+    $('#stateInfo').hide()
     var products = ['General Plastics', 'Green Span Profiles', 'Eco Cold Doors', 'Chase Doors', 'Foamular Insulation', 'Aluminum Tee Ceilings']
     var regionProductName;
 
@@ -17,6 +19,7 @@ $(document).ready(function () {
         $('input[type="radio"]').click(function () {
             if ($(this).prop("checked") == true) {
                 $('#mapsvg').show()
+                $('#stateInfo').show()
                 regionProductName = $(this).val()
             };
         });
@@ -38,6 +41,10 @@ $(document).ready(function () {
                 name: 'John Keefe - Accounting & Inside Sales',
                 email: 'John@csiinc.org',
                 phone: '252.916.5240',
+            }, {
+                name: 'Josh Shifflett',
+                email: 'Josh@csiinc.org',
+                phone: '804.683.3262',
             }]
         },
         corporateOffice: {
@@ -54,6 +61,10 @@ $(document).ready(function () {
                 name: 'John Keefe - Accounting & Inside Sales',
                 email: 'John@csiinc.org',
                 phone: '252.916.5240',
+            }, {
+                name: 'Josh Shifflett',
+                email: 'Josh@csiinc.org',
+                phone: '804.683.3262',
             }]
         },
         regionOne: {
@@ -65,15 +76,15 @@ $(document).ready(function () {
             contacts: [{
                 name: 'Adam Comiskey - President',
                 email: 'ancomiskey@me.com',
-                phone: ' 518.477.2390 ext 3 Cell: 518.265.8702',
+                phone: '518.265.8702',
             }, {
                 name: 'David Comiskey',
                 email: 'comiskey@me.com',
-                phone: '518.477.2390 ext 1 Cell: 518.441.2461',
+                phone: '518.441.2461',
             }, {
                 name: 'Mark Hankle',
                 email: 'mhankle@me.com',
-                phone: '518.477.2390 ext 2 Cell: 518.538.3646',
+                phone: '518.538.3646',
             }]
         },
         regionTwo: {
@@ -91,7 +102,7 @@ $(document).ready(function () {
         regionThree: {
             name: 'Region 3: CSI of Virginia Inc.',
             product: ['Green Span Profiles', 'Eco Cold Doors', 'Chase Doors', 'Foamular Insulation', 'Aluminum Tee Ceilings'],
-            address: '750 Majestic Oak Drive Charleston, SC 29412',
+            address: 'PO Box 527 Folly Beach, SC 29439 ',
             fax: '804.744.3911',
             office: '804.683.3262',
             contacts: [{
@@ -104,7 +115,7 @@ $(document).ready(function () {
             name: 'Region 4: CSI of Virginia, Inc.',
             product: ['Eco Cold Doors', ' Chase Doors', 'Foamular Insulation'],
             address: '2155 Old Moultrie Road Suite 101 St.Augustine, FL 32086 ',
-            office: '904.797.6300 Cell:904.824.6825',
+            office: '904.797.6300',
             contacts: [{
                 name: 'Allen Rockafellow',
                 email: 'arockafellow@att.net',
@@ -613,7 +624,9 @@ $(document).ready(function () {
 
         viewBox: [0, 0, 959, 593],
         onClick: function () {
-
+            $('#contactInfo').empty()
+            $('#contactInfoTable').empty()
+            $('#table').show()
             var regionContactInfo = this.data.primaryContactInfo
             var _regiontempProductName = regionContactInfo.product
 
@@ -631,68 +644,68 @@ $(document).ready(function () {
 
             var contactInfo = $('<div class="contact-info">');
             var regionName = $('<h3>').text('Region Name: ' + regionContactInfo.name);
-            var regionPoduct = $('<h4>').text('Products: ' + regionContactInfo.product.join(", "));
-            var regionAddress = $('<h4>').text('Primary Address: ' + regionContactInfo.address);
-            var regionOffice = $('<h4>').text('Office Number: ' + regionContactInfo.office);
-            var linebreak = $('<hr>');
+            var regionPoduct = $('<h6>').text('Products: ' + regionContactInfo.product.join(", "));
+            var regionAddress = $('<h6>').text(regionContactInfo.address);
+            var regionOffice = $('<h6>').text('Office Number: ' + regionContactInfo.office);
+            var generalPlastics = $('<h6>').text('Please email inquiries for General Plastics to GP@csiinc.org')
+
             contactInfo.append(regionName);
             contactInfo.append(regionPoduct);
             contactInfo.append(regionAddress);
             contactInfo.append(regionOffice);
-            contactInfo.append(linebreak);
+            contactInfo.append(generalPlastics);
+
+
+            var contactInfoTableRowOne = $('<tr>');    
+            var contactInfoTableRowTwo = $('<tr>');    
+            var contactInfoTableRowThree = $('<tr>');    
 
             if (typeof regionContactInfo.contacts[1] === "undefined") {
-                var firstContactName = $('<h4>').text('Primary Contact: ' + regionContactInfo.contacts[0].name);
-                contactInfo.append(firstContactName);
-                var firstContactPhone = $('<h4>').text('Primary Phone: ' + regionContactInfo.contacts[0].phone);
-                contactInfo.append(firstContactPhone);
-                var firstContactEmail = $('<h4>').text('Primary Email: ' + regionContactInfo.contacts[0].email);
-                contactInfo.append(firstContactEmail);
+                var firstContactName = $('<td>').text(regionContactInfo.contacts[0].name);
+                contactInfoTableRowOne.append(firstContactName);
+                var firstContactPhone = $('<td>').text(regionContactInfo.contacts[0].phone);
+                contactInfoTableRowOne.append(firstContactPhone);
+                var firstContactEmail = $('<td>').text(regionContactInfo.contacts[0].email);
+                contactInfoTableRowOne.append(firstContactEmail);
             } else if (typeof regionContactInfo.contacts[2] === "undefined") {
-                var firstContactName = $('<h4>').text('Primary Contact: ' + regionContactInfo.contacts[0].name);
-                contactInfo.append(firstContactName);
-                var firstContactPhone = $('<h4>').text('Primary Phone: ' + regionContactInfo.contacts[0].phone);
-                contactInfo.append(firstContactPhone);
-                var firstContactEmail = $('<h4>').text('Primary Email: ' + regionContactInfo.contacts[0].email);
-                contactInfo.append(firstContactEmail);
-                var linebreakTwo = $('<hr>');
-                //Second Contact
-                contactInfo.append(linebreakTwo);
-                var secondContactName = $('<h4>').text('Secondary Contact: ' + regionContactInfo.contacts[1].name);
-                contactInfo.append(secondContactName);
-                var secondContactPhone = $('<h4>').text('Secondary Phone: ' + regionContactInfo.contacts[1].phone);
-                contactInfo.append(secondContactPhone);
-                var secondContactEmail = $('<h4>').text('Secondary Email: ' + regionContactInfo.contacts[1].email);
-                contactInfo.append(secondContactEmail);
+                var firstContactName = $('<td>').text(regionContactInfo.contacts[0].name);
+                contactInfoTableRowOne.append(firstContactName);
+                var firstContactPhone = $('<td>').text(regionContactInfo.contacts[0].phone);
+                contactInfoTableRowOne.append(firstContactPhone);
+                var firstContactEmail = $('<td>').text(regionContactInfo.contacts[0].email);
+                contactInfoTableRowOne.append(firstContactEmail);
+                var secondContactName = $('<td>').text(regionContactInfo.contacts[1].name);
+                contactInfoTableRowTwo.append(secondContactName);
+                var secondContactPhone = $('<td>').text(regionContactInfo.contacts[1].phone);
+                contactInfoTableRowTwo.append(secondContactPhone);
+                var secondContactEmail = $('<td>').text(regionContactInfo.contacts[1].email);
+                contactInfoTableRowTwo.append(secondContactEmail);
             } else {
-                var firstContactName = $('<h4>').text('Primary Contact: ' + regionContactInfo.contacts[0].name);
-                contactInfo.append(firstContactName);
-                var firstContactPhone = $('<h4>').text('Primary Phone: ' + regionContactInfo.contacts[0].phone);
-                contactInfo.append(firstContactPhone);
-                var firstContactEmail = $('<h4>').text('Primary Email: ' + regionContactInfo.contacts[0].email);
-                contactInfo.append(firstContactEmail);
-                var linebreakThree = $('<hr>');
-                contactInfo.append(linebreakThree);
-                //Second Contact
-                var secondContactName = $('<h4>').text('Secondary Contact: ' + regionContactInfo.contacts[1].name);
-                contactInfo.append(secondContactName);
-                var secondContactPhone = $('<h4>').text('Secondary Phone: ' + regionContactInfo.contacts[1].phone);
-                contactInfo.append(secondContactPhone);
-                var secondContactEmail = $('<h4>').text('Secondary Email: ' + regionContactInfo.contacts[1].email);
-                contactInfo.append(secondContactEmail);
-                var linebreakFour = $('<hr>');
-                contactInfo.append(linebreakFour);
-                //Third Contact
-                var thirdContactName = $('<h4>').text('Third Contact: ' + regionContactInfo.contacts[2].name);
-                contactInfo.append(thirdContactName);
-                var thirdContactPhone = $('<h4>').text('Third Phone: ' + regionContactInfo.contacts[2].phone);
-                contactInfo.append(thirdContactPhone);
-                var thirdContactEmail = $('<h4>').text('Third Email: ' + regionContactInfo.contacts[2].email);
-                contactInfo.append(thirdContactEmail);
+                var firstContactName = $('<td>').text(regionContactInfo.contacts[0].name);
+                contactInfoTableRowOne.append(firstContactName);
+                var firstContactPhone = $('<td>').text(regionContactInfo.contacts[0].phone);
+                contactInfoTableRowOne.append(firstContactPhone);
+                var firstContactEmail = $('<td>').text(regionContactInfo.contacts[0].email);
+                contactInfoTableRowOne.append(firstContactEmail);
+                var secondContactName = $('<td>').text(regionContactInfo.contacts[1].name);
+                contactInfoTableRowTwo.append(secondContactName);
+                var secondContactPhone = $('<td>').text(regionContactInfo.contacts[1].phone);
+                contactInfoTableRowTwo.append(secondContactPhone);
+                var secondContactEmail = $('<td>').text(regionContactInfo.contacts[1].email);
+                contactInfoTableRowTwo.append(secondContactEmail);
+                var thirdContactName = $('<td>').text(regionContactInfo.contacts[2].name);
+                contactInfoTableRowThree.append(thirdContactName);
+                var thirdContactPhone = $('<td>').text(regionContactInfo.contacts[2].phone);
+                contactInfoTableRowThree.append(thirdContactPhone);
+                var thirdContactEmail = $('<td>').text(regionContactInfo.contacts[2].email);
+                contactInfoTableRowThree.append(thirdContactEmail);
             }
-            // }
+
             //Display contact Info
             $('#contactInfo').html(contactInfo);
+            $('#contactInfoTable').append(contactInfoTableRowOne);
+            $('#contactInfoTable').append(contactInfoTableRowTwo);
+            $('#contactInfoTable').append(contactInfoTableRowThree);
         },
         gauge: {
             on: false,

@@ -380,23 +380,23 @@ background: url('../img/nav_hover_bg.png') 0 -74px;
 	background-image: url(../img/findsalesrep_bg.png);
 	background-repeat: repeat;
 	overflow: hidden;
-	width: 940px;
-	padding-left: 20px;
+	width: 100%;
+	padding: 10px;
 }
 #findsalesrep h2{
 	font: 32px/0px 'YanoneKaffeesatzRegular', Arial, sans-serif;
 	color: #FFF;	
+	padding-bottom: 10px;
 }
 #findsalesrep p{
 	font-family: 'OpenSansRegular', Arial, sans-serif;
 	font-size: 14px;
-	line-height: 14px;
+	line-height: 1.6em;
 	color: #FFF;
 }
 a.findarepbtn {
 	background:url('../img/findsalesrep_sprite.png') 0 0;
-	margin-right: 100px;
-	margin-top: 20px;
+	margin: 10px;
 	width: 170px;
 	height: 42px;
 	display: block;
@@ -415,6 +415,7 @@ a.findarepbtn:active{background: url('../img/findsalesrep_sprite.png') 0 42px; }
 #hp_content h2{
 	font: 32px/0px 'YanoneKaffeesatzRegular', Arial, sans-serif;
 	color: #0e76bc;	
+	line-height: 1.6em
 }
 #hp_content h3{
 	font-family: 'OpenSansBold', Arial, sans-serif;
@@ -440,8 +441,11 @@ a.findarepbtn:active{background: url('../img/findsalesrep_sprite.png') 0 42px; }
 }
 #hp_content li{
 }
+.float_none{
+	float: none !important;
+}	
 .hp_content_full {
-	/* float: left; */
+	float: left;
 	padding-top: 0px;
 	padding-right: 20px;
 	padding-bottom: 20px;
@@ -535,12 +539,23 @@ a.findarepbtn:active{background: url('../img/findsalesrep_sprite.png') 0 42px; }
 
 /* ==========================================
 ADDED FOR NEW CONTACT FORM, HONEY POT
-FRESHMOVEMEDIA LLC 
+FRESHMOVEMEDIA LLC ADDED CSS
 ============================================*/
 form #website {
 	display: none;
 }
-
+.filter-label{
+	padding:5px;
+}
+.filter-input{
+	margin:5px;
+}
+.check-boxes{
+	padding:20px;
+}
+input[type=radio]{
+	margin: 4px;
+}
 /* =============================================================================
    PLACEHOLDER Media Queries for Responsive Design.
    These override the primary ('mobile first') styles
