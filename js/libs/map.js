@@ -24,6 +24,49 @@ $(document).ready(function () {
             };
         });
     };
+    $('#outUS').click(function () {
+        console.log('hi');
+        $('#contactInfo').empty()
+        $('#contactInfoTable').empty()
+        $('#table').show()
+        var contactInfo = $('<div class="contact-info" id="scrollToAchor">');
+        var regionName = $('<h3>').text('Region Name: ' + sectors.corporateOffice.name);
+        var regionPoduct = $('<h6>').text('Products: ' + sectors.corporateOffice.product.join(", "));
+        var regionAddress = $('<h6>').text(sectors.corporateOffice.address);
+        var regionOffice = $('<h6>').text('Office Number: ' + sectors.corporateOffice.office);
+        contactInfo.append(regionName);
+        contactInfo.append(regionPoduct);
+        contactInfo.append(regionAddress);
+        contactInfo.append(regionOffice);
+        var contactInfoTableRowOne = $('<tr>');
+        var contactInfoTableRowTwo = $('<tr>');
+        var contactInfoTableRowThree = $('<tr>');
+        var firstContactName = $('<td>').text(sectors.corporateOffice.contacts[0].name);
+        contactInfoTableRowOne.append(firstContactName);
+        var firstContactPhone = $('<td>').text(sectors.corporateOffice.contacts[0].phone);
+        contactInfoTableRowOne.append(firstContactPhone);
+        var firstContactEmail = $('<td>').html('<a href=mailto:' + sectors.corporateOffice.contacts[0].email + '>' +
+            sectors.corporateOffice.contacts[0].email + '</a>');
+        contactInfoTableRowOne.append(firstContactEmail);
+        var secondContactName = $('<td>').text(sectors.corporateOffice.contacts[1].name);
+        contactInfoTableRowTwo.append(secondContactName);
+        var secondContactPhone = $('<td>').text(sectors.corporateOffice.contacts[1].phone);
+        contactInfoTableRowTwo.append(secondContactPhone);
+        var secondContactEmail = $('<td>').html('<a href=mailto:' + sectors.corporateOffice.contacts[1].email + '>' +
+            sectors.corporateOffice.contacts[1].email + '</a>');
+        contactInfoTableRowTwo.append(secondContactEmail);
+        var thirdContactName = $('<td>').text(sectors.corporateOffice.contacts[2].name);
+        contactInfoTableRowThree.append(thirdContactName);
+        var thirdContactPhone = $('<td>').text(sectors.corporateOffice.contacts[2].phone);
+        contactInfoTableRowThree.append(thirdContactPhone);
+        var thirdContactEmail = $('<td>').html('<a href=mailto:' + sectors.corporateOffice.contacts[2].email + '>' + sectors.corporateOffice.contacts[2].email + '</a>');
+        contactInfoTableRowThree.append(thirdContactEmail);
+        $('#contactInfo').html(contactInfo);
+        $('#contactInfoTable').append(contactInfoTableRowOne);
+        $('#contactInfoTable').append(contactInfoTableRowTwo);
+        $('#contactInfoTable').append(contactInfoTableRowThree);
+
+    });
     filter()
 
     var sectors = {
@@ -113,7 +156,7 @@ $(document).ready(function () {
         },
         regionFour: {
             name: 'Region 4: CSI of Virginia, Inc.',
-            product: ['Eco Cold Doors', ' Chase Doors', 'Foamular Insulation'],
+            product: ['Eco Cold Doors', ' Chase Doors', 'Foamular Insulation', 'Aluminum Tee Ceilings'],
             address: '2155 Old Moultrie Road Suite 101 St.Augustine, FL 32086 ',
             office: '904.797.6300',
             contacts: [{
@@ -164,6 +207,7 @@ $(document).ready(function () {
                 id: "AK",
                 'id_no_spaces': "AK",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -173,6 +217,7 @@ $(document).ready(function () {
                 id: "AL",
                 'id_no_spaces': "AL",
                 tooltip: "Region 4: CSI of Virginia, Inc.",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionFour),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -182,6 +227,7 @@ $(document).ready(function () {
                 id: "AR",
                 'id_no_spaces': "AR",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -191,6 +237,7 @@ $(document).ready(function () {
                 id: "AZ",
                 'id_no_spaces': "AZ",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -200,6 +247,7 @@ $(document).ready(function () {
                 id: "CA",
                 'id_no_spaces': "CA",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -209,6 +257,7 @@ $(document).ready(function () {
                 id: "CO",
                 'id_no_spaces': "CO",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -218,6 +267,7 @@ $(document).ready(function () {
                 id: "CT",
                 'id_no_spaces': "CT",
                 tooltip: "Region 1: Comiskey & Associates LLC",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionOne),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -227,6 +277,7 @@ $(document).ready(function () {
                 id: "DC",
                 'id_no_spaces': "DC",
                 tooltip: "Region 2: CSI of Virginia, Inc.",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionThree),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -236,6 +287,7 @@ $(document).ready(function () {
                 id: "DE",
                 'id_no_spaces': "DE",
                 tooltip: "Region 2: CSI of Virginia, Inc.",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionTwo),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -245,6 +297,7 @@ $(document).ready(function () {
                 id: "FL",
                 'id_no_spaces': "FL",
                 tooltip: "Region 4: CSI of Virginia, Inc. ",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionFour),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -254,6 +307,7 @@ $(document).ready(function () {
                 id: "GA",
                 'id_no_spaces': "GA",
                 tooltip: "Region 4: CSI of Virginia, Inc. ",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionFour),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -263,6 +317,7 @@ $(document).ready(function () {
                 id: "HI",
                 'id_no_spaces': "HI",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -272,6 +327,7 @@ $(document).ready(function () {
                 id: "IA",
                 'id_no_spaces': "IA",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -281,6 +337,7 @@ $(document).ready(function () {
                 id: "ID",
                 'id_no_spaces': "ID",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -289,18 +346,21 @@ $(document).ready(function () {
             IL: {
                 id: "IL",
                 'id_no_spaces': "IL",
-                tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                tooltip: "Region 5: CSI of Virginia, Inc.",
+                href: '#scrollToAchor',
                 data: {
-                    primaryContactInfo: (sectors.csiVa),
+                    primaryContactInfo: (sectors.regionFive),
                     secondaryContactInfo: (sectors.corporateOffice)
                 }
             },
             IN: {
                 id: "IN",
                 'id_no_spaces': "IN",
-                tooltip: "Region 5: CSI of Virginia, Inc. ",
+                tooltip: "Region 5: CSI of Virginia, Inc.",
+                href: '#scrollToAchor',
                 data: {
-                    primaryContactInfo: (sectors.regionFour),
+                    href: '#scrollToAchor',
+                    primaryContactInfo: (sectors.regionFive),
                     secondaryContactInfo: (sectors.corporateOffice)
                 }
             },
@@ -308,7 +368,9 @@ $(document).ready(function () {
                 id: "KS",
                 'id_no_spaces': "KS",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
+                    href: '#scrollToAchor',
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
                 }
@@ -317,6 +379,7 @@ $(document).ready(function () {
                 id: "KY",
                 'id_no_spaces': "KY",
                 tooltip: "Region 5: CSI of Virginia, Inc. ",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionFive),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -326,6 +389,7 @@ $(document).ready(function () {
                 id: "LA",
                 'id_no_spaces': "LA",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -335,6 +399,7 @@ $(document).ready(function () {
                 id: "MA",
                 'id_no_spaces': "MA",
                 tooltip: "Region 1: Comiskey & Associates LLC",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionOne),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -344,6 +409,7 @@ $(document).ready(function () {
                 id: "MD",
                 'id_no_spaces': "MD",
                 tooltip: "Region 2: CSI of Virginia, Inc.",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionTwo),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -353,6 +419,7 @@ $(document).ready(function () {
                 id: "ME",
                 'id_no_spaces': "ME",
                 tooltip: "Region 1: Comiskey & Associates LLC",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionOne),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -362,6 +429,7 @@ $(document).ready(function () {
                 id: "MI",
                 'id_no_spaces': "MI",
                 tooltip: "Region 5: CSI of Virginia, Inc. ",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionFive),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -371,6 +439,7 @@ $(document).ready(function () {
                 id: "MN",
                 'id_no_spaces': "MN",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -380,6 +449,7 @@ $(document).ready(function () {
                 id: "MO",
                 'id_no_spaces': "MO",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -389,7 +459,9 @@ $(document).ready(function () {
                 id: "MS",
                 'id_no_spaces': "MS",
                 tooltip: "Region 4: CSI of Virginia, Inc. ",
+                href: '#scrollToAchor',
                 data: {
+                    href: '#scrollToAchor',
                     primaryContactInfo: (sectors.regionFour),
                     secondaryContactInfo: (sectors.corporateOffice)
                 }
@@ -398,6 +470,7 @@ $(document).ready(function () {
                 id: "MT",
                 'id_no_spaces': "MT",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -407,6 +480,7 @@ $(document).ready(function () {
                 id: "NC",
                 'id_no_spaces': "NC",
                 tooltip: "Region 3: CSI of Virginia, Inc.",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionThree),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -416,6 +490,7 @@ $(document).ready(function () {
                 id: "ND",
                 'id_no_spaces': "ND",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -425,6 +500,7 @@ $(document).ready(function () {
                 id: "NE",
                 'id_no_spaces': "NE",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -434,6 +510,7 @@ $(document).ready(function () {
                 id: "NH",
                 'id_no_spaces': "NH",
                 tooltip: "Region 1: Comiskey & Associates LLC",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionOne),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -443,6 +520,7 @@ $(document).ready(function () {
                 id: "NJ",
                 'id_no_spaces': "NJ",
                 tooltip: "Region 2: CSI of Virginiam Inc.",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionTwo),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -452,6 +530,7 @@ $(document).ready(function () {
                 id: "NM",
                 'id_no_spaces': "NM",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -461,6 +540,7 @@ $(document).ready(function () {
                 id: "NV",
                 'id_no_spaces': "NV",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -470,6 +550,7 @@ $(document).ready(function () {
                 id: "NY",
                 'id_no_spaces': "NY",
                 tooltip: "Region 1: Comiskey & Associates LLC",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionOne),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -479,6 +560,7 @@ $(document).ready(function () {
                 id: "OH",
                 'id_no_spaces': "OH",
                 tooltip: "Region 5: CSI of Virginia, Inc. ",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionFive),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -488,6 +570,7 @@ $(document).ready(function () {
                 id: "OK",
                 'id_no_spaces': "OK",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -497,6 +580,7 @@ $(document).ready(function () {
                 id: "OR",
                 'id_no_spaces': "OR",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -506,6 +590,7 @@ $(document).ready(function () {
                 id: "PA",
                 'id_no_spaces': "PA",
                 tooltip: "Region 2: CSI of Virginia",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionTwo),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -515,6 +600,7 @@ $(document).ready(function () {
                 id: "RI",
                 'id_no_spaces': "RI",
                 tooltip: "Region 1: Comiskey & Associates LLC",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionOne),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -524,6 +610,7 @@ $(document).ready(function () {
                 id: "SC",
                 'id_no_spaces': "SC",
                 tooltip: "Region 3: CSI of Virginia, Inc.",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionThree),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -533,6 +620,7 @@ $(document).ready(function () {
                 id: "SD",
                 'id_no_spaces': "SD",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -542,6 +630,7 @@ $(document).ready(function () {
                 id: "TN",
                 'id_no_spaces': "TN",
                 tooltip: "Region 3: CSI of Virginia, Inc.",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionThree),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -551,6 +640,7 @@ $(document).ready(function () {
                 id: "TX",
                 'id_no_spaces': "TX",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -560,6 +650,7 @@ $(document).ready(function () {
                 id: "UT",
                 'id_no_spaces': "UT",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -569,6 +660,7 @@ $(document).ready(function () {
                 id: "VA",
                 'id_no_spaces': "VA",
                 tooltip: "Region 3: CSI of Virginia, Inc.",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionThree),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -578,6 +670,7 @@ $(document).ready(function () {
                 id: "VT",
                 'id_no_spaces': "VT",
                 tooltip: "Region 1: Comiskey & Associates LLC",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionOne),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -587,6 +680,7 @@ $(document).ready(function () {
                 id: "WA",
                 'id_no_spaces': "WA",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -596,6 +690,7 @@ $(document).ready(function () {
                 id: "WI",
                 'id_no_spaces': "WI",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -605,6 +700,7 @@ $(document).ready(function () {
                 id: "WV",
                 'id_no_spaces': "WV",
                 tooltip: "Region 5: CSI of Virginia, Inc. ",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.regionFive),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -614,6 +710,7 @@ $(document).ready(function () {
                 id: "WY",
                 'id_no_spaces': "WY",
                 tooltip: "CSI of Virginia, Inc. - Corporate Office",
+                href: '#scrollToAchor',
                 data: {
                     primaryContactInfo: (sectors.csiVa),
                     secondaryContactInfo: (sectors.corporateOffice)
@@ -621,12 +718,13 @@ $(document).ready(function () {
                 }
             }
         },
-
         viewBox: [0, 0, 959, 593],
+
         onClick: function () {
             $('#contactInfo').empty()
             $('#contactInfoTable').empty()
             $('#table').show()
+
             var regionContactInfo = this.data.primaryContactInfo
             var _regiontempProductName = regionContactInfo.product
 
@@ -634,78 +732,91 @@ $(document).ready(function () {
                 _regionContactTemp = regionContactInfo.product[i];
                 if (_regiontempProductName.includes(regionProductName)) {
                     var regionContactInfo = this.data.primaryContactInfo
-                    console.log('true')
+                    // console.log('true')
                 } else {
-                    console.log('false')
+                    // console.log('false')
                     regionContactInfo = this.data.secondaryContactInfo
-                    console.log(regionContactInfo)
+                    // console.log(regionContactInfo)
                 }
             }
-
-            var contactInfo = $('<div class="contact-info">');
+            var contactInfo = $('<div class="contact-info" id="scrollToAchor">');
             var regionName = $('<h3>').text('Region Name: ' + regionContactInfo.name);
             var regionPoduct = $('<h6>').text('Products: ' + regionContactInfo.product.join(", "));
             var regionAddress = $('<h6>').text(regionContactInfo.address);
             var regionOffice = $('<h6>').text('Office Number: ' + regionContactInfo.office);
-            var generalPlastics = $('<h6>').text('Please email inquiries for General Plastics to GP@csiinc.org')
-
+            var generalPlastics = $('<h6>').html('Please email inquiries for General Plastics to ' + '<a href=mailto:GP@csiinc.org>' + 'GP@csiinc.org' + '</a>')
             contactInfo.append(regionName);
             contactInfo.append(regionPoduct);
             contactInfo.append(regionAddress);
             contactInfo.append(regionOffice);
             contactInfo.append(generalPlastics);
 
-
-            var contactInfoTableRowOne = $('<tr>');    
-            var contactInfoTableRowTwo = $('<tr>');    
-            var contactInfoTableRowThree = $('<tr>');    
+            var contactInfoTableRowOne = $('<tr>');
+            var contactInfoTableRowTwo = $('<tr>');
+            var contactInfoTableRowThree = $('<tr>');
 
             if (typeof regionContactInfo.contacts[1] === "undefined") {
                 var firstContactName = $('<td>').text(regionContactInfo.contacts[0].name);
                 contactInfoTableRowOne.append(firstContactName);
                 var firstContactPhone = $('<td>').text(regionContactInfo.contacts[0].phone);
                 contactInfoTableRowOne.append(firstContactPhone);
-                var firstContactEmail = $('<td>').text(regionContactInfo.contacts[0].email);
+                var firstContactEmail = $('<td>').html('<a href=mailto:' + regionContactInfo.contacts[0].email + '>' +
+                    regionContactInfo.contacts[0].email + '</a>');
                 contactInfoTableRowOne.append(firstContactEmail);
             } else if (typeof regionContactInfo.contacts[2] === "undefined") {
                 var firstContactName = $('<td>').text(regionContactInfo.contacts[0].name);
                 contactInfoTableRowOne.append(firstContactName);
                 var firstContactPhone = $('<td>').text(regionContactInfo.contacts[0].phone);
                 contactInfoTableRowOne.append(firstContactPhone);
-                var firstContactEmail = $('<td>').text(regionContactInfo.contacts[0].email);
+                var firstContactEmail = $('<td>').html('<a href=mailto:' + regionContactInfo.contacts[0].email + '>' +
+                    regionContactInfo.contacts[0].email + '</a>');
                 contactInfoTableRowOne.append(firstContactEmail);
                 var secondContactName = $('<td>').text(regionContactInfo.contacts[1].name);
                 contactInfoTableRowTwo.append(secondContactName);
                 var secondContactPhone = $('<td>').text(regionContactInfo.contacts[1].phone);
                 contactInfoTableRowTwo.append(secondContactPhone);
-                var secondContactEmail = $('<td>').text(regionContactInfo.contacts[1].email);
+                var secondContactEmail = $('<td>').html('<a href=mailto:' + regionContactInfo.contacts[1].email + '>' +
+                    regionContactInfo.contacts[1].email + '</a>');
                 contactInfoTableRowTwo.append(secondContactEmail);
             } else {
                 var firstContactName = $('<td>').text(regionContactInfo.contacts[0].name);
                 contactInfoTableRowOne.append(firstContactName);
                 var firstContactPhone = $('<td>').text(regionContactInfo.contacts[0].phone);
                 contactInfoTableRowOne.append(firstContactPhone);
-                var firstContactEmail = $('<td>').text(regionContactInfo.contacts[0].email);
+                var firstContactEmail = $('<td>').html('<a href=mailto:' + regionContactInfo.contacts[0].email + '>' +
+                    regionContactInfo.contacts[0].email + '</a>');
                 contactInfoTableRowOne.append(firstContactEmail);
                 var secondContactName = $('<td>').text(regionContactInfo.contacts[1].name);
                 contactInfoTableRowTwo.append(secondContactName);
                 var secondContactPhone = $('<td>').text(regionContactInfo.contacts[1].phone);
                 contactInfoTableRowTwo.append(secondContactPhone);
-                var secondContactEmail = $('<td>').text(regionContactInfo.contacts[1].email);
+                var secondContactEmail = $('<td>').html('<a href=mailto:' + regionContactInfo.contacts[1].email + '>' +
+                    regionContactInfo.contacts[1].email + '</a>');
                 contactInfoTableRowTwo.append(secondContactEmail);
                 var thirdContactName = $('<td>').text(regionContactInfo.contacts[2].name);
                 contactInfoTableRowThree.append(thirdContactName);
                 var thirdContactPhone = $('<td>').text(regionContactInfo.contacts[2].phone);
                 contactInfoTableRowThree.append(thirdContactPhone);
-                var thirdContactEmail = $('<td>').text(regionContactInfo.contacts[2].email);
+                var thirdContactEmail = $('<td>').html('<a href=mailto:' + regionContactInfo.contacts[2].email + '>' + regionContactInfo.contacts[2].email + '</a>');
                 contactInfoTableRowThree.append(thirdContactEmail);
             }
+            // Moves user down to the contactinfo 
+            $("a[href^='#']").click(function (e) {
+                e.preventDefault();
+
+                var position = $($(this).attr("href")).offset().top;
+
+                $("body, html").animate({
+                    scrollTop: position
+                } /* speed */ );
+            });
 
             //Display contact Info
             $('#contactInfo').html(contactInfo);
             $('#contactInfoTable').append(contactInfoTableRowOne);
             $('#contactInfoTable').append(contactInfoTableRowTwo);
             $('#contactInfoTable').append(contactInfoTableRowThree);
+
         },
         gauge: {
             on: false,

@@ -16,11 +16,12 @@
     <?php require_once('inc/headernav.php'); ?>
     <div id="hp_content">
         <div class="hp_content_full float_none">
-            <h1>CSI Sales Rep Locator</h1>
+            <h1>CSI Sales Rep Locator</h1>            
             <h3>Please select the primary product you are interested in.</h3>
             <div class="check-boxes" id="filter"></div>
             <h3 id="stateInfo">Select a state to display their contact information...</h3>
             <div id="mapsvg"></div>
+            <button id="outUS" class="btn btn-primary">Located outside the US?</button>
             <div id="contactInfo"></div>
             <table id="table" class="table">
                 <thead>
