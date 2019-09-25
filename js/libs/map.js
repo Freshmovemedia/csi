@@ -41,6 +41,8 @@ $(document).ready(function () {
         var contactInfoTableRowOne = $('<tr>');
         var contactInfoTableRowTwo = $('<tr>');
         var contactInfoTableRowThree = $('<tr>');
+        var contactInfoTableRowFour = $('<tr>');
+
         var firstContactName = $('<td>').text(sectors.corporateOffice.contacts[0].name);
         contactInfoTableRowOne.append(firstContactName);
         var firstContactPhone = $('<td>').text(sectors.corporateOffice.contacts[0].phone);
@@ -61,10 +63,18 @@ $(document).ready(function () {
         contactInfoTableRowThree.append(thirdContactPhone);
         var thirdContactEmail = $('<td>').html('<a href=mailto:' + sectors.corporateOffice.contacts[2].email + '>' + sectors.corporateOffice.contacts[2].email + '</a>');
         contactInfoTableRowThree.append(thirdContactEmail);
+         var fourthContactName = $('<td>').text(sectors.corporateOffice.contacts[3].name);
+         contactInfoTableRowFour.append(fourthContactName);
+         var fourthContactPhone = $('<td>').text(sectors.corporateOffice.contacts[3].phone);
+         contactInfoTableRowFour.append(fourthContactPhone);
+         var fourthContactEmail = $('<td>').html('<a href=mailto:' + sectors.corporateOffice.contacts[3].email + '>' + sectors.corporateOffice.contacts[3].email + '</a>');
+         contactInfoTableRowFour.append(fourthContactEmail);
+
         $('#contactInfo').html(contactInfo);
         $('#contactInfoTable').append(contactInfoTableRowOne);
         $('#contactInfoTable').append(contactInfoTableRowTwo);
         $('#contactInfoTable').append(contactInfoTableRowThree);
+        $('#contactInfoTable').append(contactInfoTableRowFour);
 
     });
     filter()
@@ -77,6 +87,10 @@ $(document).ready(function () {
             address: 'P.O.Box 74728 North Chesterfield, VA 23236',
             fax: '804.744.3911',
             contacts: [{
+                name: 'For the quickest response, please email General Plastics inquiries ',
+                email: 'GP@csiinc.org',
+                phone: '',
+            }, {
                 name: 'Kevin Clasbey - President',
                 email: 'Kevin@csiinc.org',
                 phone: '804.744.0700 ext 3',
@@ -97,6 +111,10 @@ $(document).ready(function () {
             address: 'P.O.Box 74728 North Chesterfield, VA 23236',
             fax: '804.744.3911',
             contacts: [{
+                name: 'For the quickest response, please email General Plastics inquiries to',
+                email: 'GP@csiinc.org',
+                phone: '',
+            }, {
                 name: 'Kevin Clasbey - President',
                 email: 'Kevin@csiinc.org',
                 phone: '804.744.0700 ext 3',
@@ -114,7 +132,7 @@ $(document).ready(function () {
             name: 'Region 1: Comiskey & Associates LLC',
             product: ['Green Span Profiles', 'Eco Cold Doors', 'Chase Doors', 'Foamular Insulation', 'Aluminum Tee Ceilings'],
             office: '518.477.2390',
-            address: '12 Corporate Woods Blvd. Albany, NY 12221',
+            address: '12 Corporate Woods Blvd. Albany, NY 12211',
             fax: '518.477.3864',
             contacts: [{
                 name: 'Adam Comiskey - President',
@@ -739,21 +757,23 @@ $(document).ready(function () {
                     // console.log(regionContactInfo)
                 }
             }
+
             var contactInfo = $('<div class="contact-info" id="scrollToAchor">');
             var regionName = $('<h3>').text('Region Name: ' + regionContactInfo.name);
             var regionPoduct = $('<h6>').text('Products: ' + regionContactInfo.product.join(", "));
             var regionAddress = $('<h6>').text(regionContactInfo.address);
             var regionOffice = $('<h6>').text('Office Number: ' + regionContactInfo.office);
-            var generalPlastics = $('<h6>').html('Please email inquiries for General Plastics to ' + '<a href=mailto:GP@csiinc.org>' + 'GP@csiinc.org' + '</a>')
+            
             contactInfo.append(regionName);
             contactInfo.append(regionPoduct);
             contactInfo.append(regionAddress);
             contactInfo.append(regionOffice);
-            contactInfo.append(generalPlastics);
+            
 
             var contactInfoTableRowOne = $('<tr>');
             var contactInfoTableRowTwo = $('<tr>');
             var contactInfoTableRowThree = $('<tr>');
+            var contactInfoTableRowFour = $('<tr>');
 
             if (typeof regionContactInfo.contacts[1] === "undefined") {
                 var firstContactName = $('<td>').text(regionContactInfo.contacts[0].name);
@@ -778,6 +798,27 @@ $(document).ready(function () {
                 var secondContactEmail = $('<td>').html('<a href=mailto:' + regionContactInfo.contacts[1].email + '>' +
                     regionContactInfo.contacts[1].email + '</a>');
                 contactInfoTableRowTwo.append(secondContactEmail);
+            } else if (typeof regionContactInfo.contacts[3] === "undefined") {
+                var firstContactName = $('<td>').text(regionContactInfo.contacts[0].name);
+                contactInfoTableRowOne.append(firstContactName);
+                var firstContactPhone = $('<td>').text(regionContactInfo.contacts[0].phone);
+                contactInfoTableRowOne.append(firstContactPhone);
+                var firstContactEmail = $('<td>').html('<a href=mailto:' + regionContactInfo.contacts[0].email + '>' +
+                    regionContactInfo.contacts[0].email + '</a>');
+                contactInfoTableRowOne.append(firstContactEmail);
+                var secondContactName = $('<td>').text(regionContactInfo.contacts[1].name);
+                contactInfoTableRowTwo.append(secondContactName);
+                var secondContactPhone = $('<td>').text(regionContactInfo.contacts[1].phone);
+                contactInfoTableRowTwo.append(secondContactPhone);
+                var secondContactEmail = $('<td>').html('<a href=mailto:' + regionContactInfo.contacts[1].email + '>' +
+                    regionContactInfo.contacts[1].email + '</a>');
+                contactInfoTableRowTwo.append(secondContactEmail);
+                var thirdContactName = $('<td>').text(regionContactInfo.contacts[2].name);
+                contactInfoTableRowThree.append(thirdContactName);
+                var thirdContactPhone = $('<td>').text(regionContactInfo.contacts[2].phone);
+                contactInfoTableRowThree.append(thirdContactPhone);
+                var thirdContactEmail = $('<td>').html('<a href=mailto:' + regionContactInfo.contacts[2].email + '>' + regionContactInfo.contacts[2].email + '</a>');
+                contactInfoTableRowThree.append(thirdContactEmail);
             } else {
                 var firstContactName = $('<td>').text(regionContactInfo.contacts[0].name);
                 contactInfoTableRowOne.append(firstContactName);
@@ -799,6 +840,12 @@ $(document).ready(function () {
                 contactInfoTableRowThree.append(thirdContactPhone);
                 var thirdContactEmail = $('<td>').html('<a href=mailto:' + regionContactInfo.contacts[2].email + '>' + regionContactInfo.contacts[2].email + '</a>');
                 contactInfoTableRowThree.append(thirdContactEmail);
+                var fourthContactName = $('<td>').text(regionContactInfo.contacts[3].name);
+                contactInfoTableRowFour.append(fourthContactName);
+                var fourthContactPhone = $('<td>').text(regionContactInfo.contacts[3].phone);
+                contactInfoTableRowFour.append(fourthContactPhone);
+                var fourthContactEmail = $('<td>').html('<a href=mailto:' + regionContactInfo.contacts[3].email + '>' + regionContactInfo.contacts[3].email + '</a>');
+                contactInfoTableRowFour.append(fourthContactEmail);
             }
             // Moves user down to the contactinfo 
             $("a[href^='#']").click(function (e) {
@@ -816,6 +863,7 @@ $(document).ready(function () {
             $('#contactInfoTable').append(contactInfoTableRowOne);
             $('#contactInfoTable').append(contactInfoTableRowTwo);
             $('#contactInfoTable').append(contactInfoTableRowThree);
+            $('#contactInfoTable').append(contactInfoTableRowFour);
 
         },
         gauge: {

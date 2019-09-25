@@ -46,7 +46,7 @@
 					<div class="contact-email">
 						<p>Message:</p>
 						<textarea name="message"></textarea>
-						<input type="submit" value="Let's Connect">
+						<input type="submit" value="Send Message">
 						
 						<input type="text" id="website" name="website"/>
 					</div>

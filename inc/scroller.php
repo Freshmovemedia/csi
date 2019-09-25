@@ -3,7 +3,7 @@
 
 	<div id="findsalesrep">
 
-        <a href="sales.php" class="findarepbtn"></a>
+        <a href="http://www.csiinc.org/sales/" class="findarepbtn"></a>
     	<h2>Need a Sales Representative?</h2>
         <p>Use our sales representative locator to find a highly trained rep for your area.</p>
 
