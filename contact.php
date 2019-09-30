@@ -19,7 +19,7 @@
 <body id="contactx">
 	<!-- Highlight for current page -->
 	<?php require_once('inc/headernav.php'); ?>
-	<script language="JavaScript" src="scripts/gen_validatorv31.js" type="text/javascript"></script>
+	<script language="JavaScript" src="/gen_validatorv31.js" type="text/javascript"></script>
 
 	<div id="hp_content">
 
@@ -36,7 +36,7 @@
 			</ul>
 
 			<div class="contact-form">
-				<form method="post" name="contact_form" action="contact-form-handler.php">
+				<form method="post" name="contactform" action="contact-form-handler.php">
 					<div class="name-email">
 						<p>Your Name:</p>
 						<input type="text" name="name">
@@ -46,20 +46,27 @@
 					<div class="contact-email">
 						<p>Message:</p>
 						<textarea name="message"></textarea>
-						<input type="submit" value="Send Message">
-						
-						<input type="text" id="website" name="website"/>
+						<input type="submit" value="Send Message">	
 					</div>
+					<div class='req'>
+    <label for='website'>Leave blank</label>
+    <input type='text' name='website'>
 				</form>
 			</div>
-
 		</div>
+		
+</div>
 		<script language="JavaScript">
 			var frmvalidator = new Validator("contactform");
 			frmvalidator.addValidation("name", "req", "Please provide your name");
 			frmvalidator.addValidation("email", "req", "Please provide your email");
 			frmvalidator.addValidation("email", "email",
 				"Please enter a valid email address");
+		</script>
+		<script>			
+		$(document).ready(function(){
+			$(".req").hide();
+			});	
 		</script>
 		<?php require_once('inc/footer.php'); ?>
 

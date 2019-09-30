@@ -1,4 +1,8 @@
 <?php 
+if($_POST['website'] != ''){
+    echo "It appears you are a bot!";
+}
+else{
 $errors = '';
 $myemail = 'Kevin@csiinc.org';//<-----Put Your email address here.
 if(empty($_POST['name'])  || 
@@ -7,7 +11,6 @@ if(empty($_POST['name'])  ||
 {
     $errors .= "\n Error: all fields are required";
 }
-
 $name = $_POST['name']; 
 $email_address = $_POST['email']; 
 $message = $_POST['message']; 
@@ -31,10 +34,11 @@ if( empty($errors))
 	
 	mail($to,$email_subject,$email_body,$headers);
 	//redirect to the 'thank you' page
-	header('Location: contact-form-thank-you.php');
+	header('Location: /contact-form-thank-you.php');
 } 
-if(!empty($_POST['website'])) die();
+}
 ?>
+
 <!DOCTYPE html> 
 <html>
 <head>
